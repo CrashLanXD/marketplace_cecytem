@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pagina web sobre un marketplace para los alumnos de CECyTEM plantel la Paz"
+    />
+    <link rel="icon" type="image/svg+xml" href="../../public/favicon.svg" />
+    <link rel="stylesheet" href="../../dist/output.css" />
+    <title>Marketplace CECyTEM</title>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      :root {
+        color-scheme: light dark;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      #mainFrame {
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+      #mainFrame.loading {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral-200 dark:bg-neutral-900">
+    <!-- #region HEADER -->
+    <header class="fixed top-0 z-10 h-20 items-center w-full">
+      <nav class="bg-green-700 px-4 lg:px-6 py-2.5 dark:bg-green-950">
+        <div class="flex flex-wrap justify-between items-center mx-auto w-full">
+          <a
+            href="https://github.com/CrashLanXD"
+            class="flex items-center"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="/public/cecytemLogo.png"
+              class="mr-3 h-12 bg-white rounded-md p-1 aspect-auto"
+              alt="CECyTEM Logo"
+              loading="eager"
+              decoding="async"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap text-white"
+              >Marketplace</span
+            >
+          </a>
+          <div class="flex items-center lg:order-2">
+            <button
+              data-collapse-toggle="mobile-menu-2"
+              id="toggle-menu"
+              type="button"
+              class="inline-flex items-center p-1 text-sm rounded-lg lg:hidden hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-green-500 text-neutral-800 dark:text-neutral-500 dark:hover:bg-green-800 dark:focus:ring-green-500"
+              aria-controls="mobile-menu-2"
+              aria-expanded="false"
+            >
+              <span class="sr-only">abrir menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="initialPage.html"
+                  onclick="loadPage('initialPage.html'); return false;"
+                  target="mainFrame"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  aria-current="page"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#marketplace"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  >Marketplace</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#programming"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  >Programación</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#industrialMaintenance"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  >Mantenimiento</a
+                >
+              </li>
+              <li>
+                <a
+                  href="team.html"
+                  onclick="loadPage('team.html'); return false;"
+                  target="mainFrame"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  >Compañía</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  onclick="loadPage('contact.html'); return false;"
+                  target="mainFrame"
+                  class="block py-2 pr-4 pl-3 text-neutral-300 border-b border-neutral-100 rounded-md hover:bg-neutral-50 lg:hover:bg-transparent lg:dark:hover:bg-transparent lg:border-0 lg:hover:text-white lg:p-0 dark:text-neutral-200 dark:hover:bg-green-900 dark:border-neutral-900"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- #endregion -->
+
+    <!-- #region HERO -->
+    <div class="mt-24 px-4 flex flex-col lg:flex-row items-start">
+      <div class="flex items-center mb-2 w-full">
+        <h1
+          class="text-3xl md:text-5xl font-bold tracking-tight text-[#121212] dark:text-white mr-auto md:ml-7 text-center md:text-start w-full"
+        >
+          CECyTEM
+          <strong
+            class="text-5xl md:text-6xl bg-gradient-to-r from-lime-400 to-green-700 text-transparent bg-clip-text inline-block pl-1"
+            >Marketplace</strong
+          >
+        </h1>
+      </div>
+      <span
+        class="m-auto mb-2 text-xl text-black dark:text-white opacity-80 font-semibold md:text-2xl md:ml-7 text-center md:text-start"
+      >
+        <time id="currentDate" datetime=""></time>
+      </span>
+    </div>
+    <!-- #endregion -->
+
+    <!-- #region MAIN -->
+    <main class="mt-4 px-4">
+      <iframe
+        class="bg-neutral-200 dark:bg-neutral-900"
+        name="mainFrame"
+        id="mainFrame"
+        src="initialPage.html"
+        frameborder="0"
+        scrolling="auto"
+        width="100%"
+        height="845"
+        title="main content"
+      ></iframe>
+    </main>
+    <!-- #endregion -->
+
+    <!-- #region FOOTER -->
+    <footer
+      class="px-2 relative bottom-0 pt-4 pb-2 bg-green-700 dark:bg-green-950"
+    >
+      <div class="mx-auto max-w-screen-xl">
+        <div class="mb-0">
+          <span class="w-fit">
+            <a
+              href="https://cecytem.edomex.gob.mx/la_paz"
+              class="flex items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/public/cecytemLogo.png"
+                class="mr-3 h-14 bg-white rounded-sm p-1 aspect-auto"
+                alt="CECyTEM Logo"
+                loading="eager"
+                decoding="async"
+              />
+              <span
+                class="self-center text-xl font-semibold whitespace-nowrap text-white"
+                >CECyTEM</span
+              >
+            </a>
+          </span>
+          <span class="text-neutral-50 dark:text-neutral-400">
+            Calle Santos Degollados s/n La Magdalena Atlicpac La Paz Estado de
+            Mexico
+          </span>
+        </div>
+        <hr
+          class="my-4 border-neutral-200 sm:mx-auto dark:border-neutral-700 lg:my-5"
+        />
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <span
+            class="text-sm text-neutral-100 sm:text-center dark:text-neutral-400"
+            >© 2022
+            <a
+              href="https://crashlanxd.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline"
+              >CLXD™</a
+            >. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+            <a
+              title="github"
+              href="https://github.com/CrashLanXD"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-neutral-50 dark:text-neutral-400 hover:text-neutral-800 transition-colors dark:hover:text-white"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- #endregion -->
+
+    <!-- #region SCRIPTS -->
+    <script>
+      const $toggleMenu = document.getElementById("toggle-menu");
+      const $mobileMenu = document.getElementById("mobile-menu-2");
+      const $timeElement = document.getElementById("currentDate");
+      const $mainFrame = document.getElementById("mainFrame");
+
+      $toggleMenu.addEventListener("click", toggleMenu);
+
+      function toggleMenu() {
+        let ariaExpanded =
+          $toggleMenu.getAttribute("aria-expanded") === "true" || false;
+        $toggleMenu.setAttribute("aria-expanded", !ariaExpanded);
+        $mobileMenu.classList.toggle("hidden");
+      }
+
+      function getCurrentDate() {
+        let currentDate = new Date();
+
+        let monthNames = [
+          "Enero",
+          "Febrero",
+          "Marzo",
+          "Abril",
+          "Mayo",
+          "Junio",
+          "Julio",
+          "Agosto",
+          "Septiembre",
+          "Octubre",
+          "Noviembre",
+          "Diciembre",
+        ];
+
+        let dayNames = [
+          "Domingo",
+          "Lunes",
+          "Martes",
+          "Miércoles",
+          "Jueves",
+          "Viernes",
+          "Sábado",
+        ];
+
+        var day = dayNames[currentDate.getDay()];
+        var date = currentDate.getDate();
+        var month = monthNames[currentDate.getMonth()];
+        var year = currentDate.getFullYear();
+
+        $timeElement.textContent = `${day} ${date} de ${month} del ${year}`;
+        $timeElement.setAttribute("datetime", currentDate.toISOString());
+      }
+
+      function loadPage(pageUrl) {
+        $mainFrame.classList.add("loading");
+        $mainFrame.onload = () => {
+          $mainFrame.classList.remove("loading");
+        };
+        $mainFrame.src = pageUrl;
+      }
+
+      // document.addEventListener("DOMContentLoaded", () => {});
+      getCurrentDate();
+    </script>
+    <!-- #endregion -->
+  </body>
+</html>
