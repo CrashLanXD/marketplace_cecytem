@@ -1,8 +1,17 @@
-# CECyTEM Marketplace
+# 🤘🏽 CECyTEM Marketplace
+
+---
+
+# 🚀 Getting Started
+
+Before getting started, make sure you have Node.js installed on your machine. If not, you can download and install it from [the official website](https://nodejs.org/). After that, clone the repository using the following command!:
 
 ```sh
-npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch
+git clone https://github.com/CrashLanXD/marketplace_cecytem.git
 ```
+Once you're in the project directory, follow the instructions in the "Commands" section to set up and start working on the project.
+
+> Make your changes and create a pull request 😎
 
 ## 👾 Project Structure
 
