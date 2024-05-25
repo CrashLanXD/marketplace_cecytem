@@ -4,6 +4,9 @@
 
 # 🚀 Getting Started
 
+> [!NOTE]
+> Esto es solo una prueba, la pagina final es esta: https://cecytem-marketplace.vercel.app/
+
 Before getting started, make sure you have Node.js installed on your machine. If not, you can download and install it from [the official website](https://nodejs.org/). After that, clone the repository using the following command!:
 
 ```sh
